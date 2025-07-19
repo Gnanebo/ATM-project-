@@ -17,7 +17,7 @@ A simple Python ATM Simulator built using basic Python concepts:
 ## 📌 Sample Run
 
 ```bash
-Enter PIN: 1234
+Enter PIN: 9949
 1. Check Balance
 2. Deposit
 3. Withdraw
