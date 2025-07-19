@@ -1,36 +1,44 @@
-# ATM Machine Simulator
-atm_pin = '9949'
-my_pin=(input())
-if atm_pin != my_pin:
-    print("incorect pin ")
-    exit()
-print("Welcome to atm ")
-balance = 3000
-while True:
-    print("1 . check balance")
-    print("2 . withdrawl")
-    print("3 . deposit")
-    print("4 .exit")
+# Step 1: PIN check
+correct_pin = "9949"
+my_pin = input("Enter your ATM PIN: ")
 
-    choice = input("enter your choice ")
-    if choice == '1':
-        print("your account balance") 
-    elif choice == '2':
-        amount=float(input("enter the withdraw amount"))
+if my_pin != correct_pin:
+    print("Incorrect PIN. Try again later.")
+    exit()
+
+print("Welcome to the ATM!")
+balance = 5000
+while True:
+    print("1. Check Balance")
+    print("2. Deposit")
+    print("3. Withdraw")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        print("Your balance is:", balance)
+
+    elif choice == "2":
+        amount = float(input("Enter amount to deposit: "))
+        balance += amount
+        print("Amount deposited successfully.")
+
+    elif choice == "3":
+        amount = float(input("Enter amount to withdraw: "))
         if amount > balance:
-            print("insufficent balance")
+            print("Insufficient balance.")
         else:
-            amount <= balance
-            print("please collect your cash")
-    elif choice == '3':
-        amount = float(input("enter the deposit amount"))
-        balnace += amount
-        print(f"your amount deposit sucessfully {balance}") 
-    elif choice == '4':
-        print("thank you for choosing for ATM have a great day sir !")
+            balance -= amount
+            print("Please collect your cash.")
+
+    elif choice == "4":
+        print("Thank you for using the ATM. Goodbye!")
         break
+
     else:
-        print("your card is declined try again")
+        print("Invalid choice. Try again.")
         continue
+
 
 
